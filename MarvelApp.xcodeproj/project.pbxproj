@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39A2B8C12A6E5F3F00CA446A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */; };
+		39A2B8C22A6E5F3F00CA446A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */; };
+		39A2B8CA2A6E904C00CA446A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8C82A6E904C00CA446A /* DetailViewController.swift */; };
+		39A2B8CB2A6E904C00CA446A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8C92A6E904C00CA446A /* DetailViewController.xib */; };
+		39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8D02A6EC81200CA446A /* HeroeCell.swift */; };
+		39A2B8D32A6EC81200CA446A /* HeroeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8D12A6EC81200CA446A /* HeroeCell.xib */; };
 		39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */; };
-		39F03C752A6D8C8900B9DD2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F03C742A6D8C8900B9DD2F /* ViewController.swift */; };
 		39F03C782A6D8C8900B9DD2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F03C762A6D8C8900B9DD2F /* Main.storyboard */; };
 		39F03C7A2A6D8C8B00B9DD2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39F03C792A6D8C8B00B9DD2F /* Assets.xcassets */; };
 		39F03C7D2A6D8C8B00B9DD2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F03C7B2A6D8C8B00B9DD2F /* LaunchScreen.storyboard */; };
@@ -37,9 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		39A2B8C82A6E904C00CA446A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		39A2B8C92A6E904C00CA446A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		39A2B8D02A6EC81200CA446A /* HeroeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeCell.swift; sourceTree = "<group>"; };
+		39A2B8D12A6EC81200CA446A /* HeroeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeCell.xib; sourceTree = "<group>"; };
 		39F03C6D2A6D8C8900B9DD2F /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39F03C742A6D8C8900B9DD2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		39F03C772A6D8C8900B9DD2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39F03C792A6D8C8B00B9DD2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39F03C7C2A6D8C8B00B9DD2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,9 +88,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39A2B8C52A6E8EFD00CA446A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		39F03C642A6D8C8900B9DD2F = {
 			isa = PBXGroup;
 			children = (
+				39A2B8D02A6EC81200CA446A /* HeroeCell.swift */,
+				39A2B8D12A6EC81200CA446A /* HeroeCell.xib */,
 				39F03C6F2A6D8C8900B9DD2F /* MarvelApp */,
 				39F03C862A6D8C8B00B9DD2F /* MarvelAppTests */,
 				39F03C902A6D8C8B00B9DD2F /* MarvelAppUITests */,
@@ -101,14 +120,18 @@
 		39F03C6F2A6D8C8900B9DD2F /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
-				39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */,
-				39F03C742A6D8C8900B9DD2F /* ViewController.swift */,
-				39F03C762A6D8C8900B9DD2F /* Main.storyboard */,
+				39A2B8C52A6E8EFD00CA446A /* New Group */,
 				39F03C792A6D8C8B00B9DD2F /* Assets.xcassets */,
+				39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */,
+				39F03C762A6D8C8900B9DD2F /* Main.storyboard */,
 				39F03C7B2A6D8C8B00B9DD2F /* LaunchScreen.storyboard */,
 				39F03C7E2A6D8C8B00B9DD2F /* Info.plist */,
 				39F03CA02A6D8D2700B9DD2F /* LoginViewController.swift */,
 				39F03CA12A6D8D2700B9DD2F /* LoginViewController.xib */,
+				39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */,
+				39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */,
+				39A2B8C82A6E904C00CA446A /* DetailViewController.swift */,
+				39A2B8C92A6E904C00CA446A /* DetailViewController.xib */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -235,7 +258,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39F03CA32A6D8D2700B9DD2F /* LoginViewController.xib in Resources */,
+				39A2B8D32A6EC81200CA446A /* HeroeCell.xib in Resources */,
+				39A2B8CB2A6E904C00CA446A /* DetailViewController.xib in Resources */,
 				39F03C7D2A6D8C8B00B9DD2F /* LaunchScreen.storyboard in Resources */,
+				39A2B8C22A6E5F3F00CA446A /* HomeViewController.xib in Resources */,
 				39F03C7A2A6D8C8B00B9DD2F /* Assets.xcassets in Resources */,
 				39F03C782A6D8C8900B9DD2F /* Main.storyboard in Resources */,
 			);
@@ -263,8 +289,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				39F03CA22A6D8D2700B9DD2F /* LoginViewController.swift in Sources */,
-				39F03C752A6D8C8900B9DD2F /* ViewController.swift in Sources */,
 				39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */,
+				39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */,
+				39A2B8C12A6E5F3F00CA446A /* HomeViewController.swift in Sources */,
+				39A2B8CA2A6E904C00CA446A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
