@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="MarvelApp" customModuleProvider="target">
             <connections>
+                <outlet property="favouriteCollection" destination="Pso-lG-Vgz" id="GTq-ea-f5M"/>
                 <outlet property="heroTable" destination="dfO-nQ-y6T" id="t7d-Yj-eQK"/>
                 <outlet property="homeImage" destination="mtm-Oe-M0b" id="Vgc-He-bdV"/>
                 <outlet property="homeView" destination="VJi-iv-Nh3" id="kA1-Y0-v7S"/>
@@ -22,18 +23,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-iv-Nh3">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-iv-Nh3">
                     <rect key="frame" x="0.0" y="0.0" width="399" height="852"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Universe" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-Oe-M0b">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Universe" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-Oe-M0b">
                             <rect key="frame" x="0.0" y="88" width="399" height="673"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dfO-nQ-y6T">
-                            <rect key="frame" x="26" y="283" width="347" height="456"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dfO-nQ-y6T">
+                            <rect key="frame" x="26" y="247" width="347" height="492"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="492" id="xPk-pG-SsX"/>
+                            </constraints>
                         </tableView>
                         <tabBar contentMode="scaleToFill" id="19l-RR-iGw">
                             <rect key="frame" x="0.0" y="761" width="399" height="49"/>
@@ -45,12 +46,44 @@
                                 <tabBarItem title="Ajustes" image="gearshape" catalog="system" id="4Sk-cb-hbe"/>
                             </items>
                         </tabBar>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pso-lG-Vgz">
+                            <rect key="frame" x="26" y="100" width="347" height="131"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="347" id="9pT-EX-tDd"/>
+                                <constraint firstAttribute="height" constant="131" id="GrA-8O-J7w"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x3s-HL-zxB">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="mtm-Oe-M0b" firstAttribute="leading" secondItem="19l-RR-iGw" secondAttribute="leading" id="0jz-lF-rch"/>
+                        <constraint firstItem="19l-RR-iGw" firstAttribute="top" secondItem="dfO-nQ-y6T" secondAttribute="bottom" constant="22" id="Cxu-Ol-Ayx"/>
+                        <constraint firstItem="dfO-nQ-y6T" firstAttribute="centerX" secondItem="mtm-Oe-M0b" secondAttribute="centerX" id="HJY-wU-Jo1"/>
+                        <constraint firstItem="19l-RR-iGw" firstAttribute="top" secondItem="mtm-Oe-M0b" secondAttribute="bottom" id="K9H-1a-lXS"/>
+                        <constraint firstItem="mtm-Oe-M0b" firstAttribute="top" secondItem="VJi-iv-Nh3" secondAttribute="top" constant="88" id="O6W-D0-aAN"/>
+                        <constraint firstAttribute="trailing" secondItem="Pso-lG-Vgz" secondAttribute="trailing" constant="26" id="TCe-GH-VNn"/>
+                        <constraint firstItem="dfO-nQ-y6T" firstAttribute="top" secondItem="Pso-lG-Vgz" secondAttribute="bottom" constant="16" id="fuO-Aa-V11"/>
+                        <constraint firstItem="Pso-lG-Vgz" firstAttribute="leading" secondItem="VJi-iv-Nh3" secondAttribute="leading" constant="26" id="ibv-EO-sbq"/>
+                        <constraint firstItem="dfO-nQ-y6T" firstAttribute="leading" secondItem="Pso-lG-Vgz" secondAttribute="leading" id="tYe-9i-B6U"/>
+                        <constraint firstItem="dfO-nQ-y6T" firstAttribute="centerX" secondItem="19l-RR-iGw" secondAttribute="centerX" id="xC8-2S-dwd"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="VJi-iv-Nh3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="CBI-tJ-uhw"/>
+                <constraint firstAttribute="trailing" secondItem="VJi-iv-Nh3" secondAttribute="trailing" constant="-6" id="OPG-ao-xx9"/>
+                <constraint firstItem="VJi-iv-Nh3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Yje-BN-HE2"/>
+                <constraint firstItem="VJi-iv-Nh3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oET-cb-Ya2"/>
+            </constraints>
             <point key="canvasLocation" x="43.511450381679388" y="-11.267605633802818"/>
         </view>
     </objects>

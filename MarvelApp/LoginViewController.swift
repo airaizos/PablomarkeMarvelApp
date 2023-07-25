@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         loginImage.contentMode = .scaleAspectFill
         
         enterButton.setTitle("Entrar", for: .normal)
-        enterButton.tintColor = UIColor.orange
+        enterButton.tintColor = UIColor(named: "myOrange")
         
     }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399662142A70156C00348332 /* CustomCollectionCell.swift */; };
+		399662172A70156C00348332 /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399662152A70156C00348332 /* CustomCollectionCell.xib */; };
 		39A2B8C12A6E5F3F00CA446A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */; };
 		39A2B8C22A6E5F3F00CA446A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */; };
 		39A2B8CA2A6E904C00CA446A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8C82A6E904C00CA446A /* DetailViewController.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		399662142A70156C00348332 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
+		399662152A70156C00348332 /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		39A2B8C82A6E904C00CA446A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -88,16 +92,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39A2B8C52A6E8EFD00CA446A /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		39F03C642A6D8C8900B9DD2F = {
 			isa = PBXGroup;
 			children = (
+				399662142A70156C00348332 /* CustomCollectionCell.swift */,
+				399662152A70156C00348332 /* CustomCollectionCell.xib */,
 				39A2B8D02A6EC81200CA446A /* HeroeCell.swift */,
 				39A2B8D12A6EC81200CA446A /* HeroeCell.xib */,
 				39F03C6F2A6D8C8900B9DD2F /* MarvelApp */,
@@ -120,7 +119,6 @@
 		39F03C6F2A6D8C8900B9DD2F /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
-				39A2B8C52A6E8EFD00CA446A /* New Group */,
 				39F03C792A6D8C8B00B9DD2F /* Assets.xcassets */,
 				39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */,
 				39F03C762A6D8C8900B9DD2F /* Main.storyboard */,
@@ -257,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				399662172A70156C00348332 /* CustomCollectionCell.xib in Resources */,
 				39F03CA32A6D8D2700B9DD2F /* LoginViewController.xib in Resources */,
 				39A2B8D32A6EC81200CA446A /* HeroeCell.xib in Resources */,
 				39A2B8CB2A6E904C00CA446A /* DetailViewController.xib in Resources */,
@@ -290,6 +289,7 @@
 			files = (
 				39F03CA22A6D8D2700B9DD2F /* LoginViewController.swift in Sources */,
 				39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */,
+				399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */,
 				39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */,
 				39A2B8C12A6E5F3F00CA446A /* HomeViewController.swift in Sources */,
 				39A2B8CA2A6E904C00CA446A /* DetailViewController.swift in Sources */,

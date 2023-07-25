@@ -16,7 +16,6 @@ class HeroeCell: UITableViewCell {
         
         heroeImage.contentMode = .scaleAspectFill
         
-        
     }
 
     override func setSelected(_ selected: Bool,
