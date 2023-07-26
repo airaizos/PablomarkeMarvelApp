@@ -9,15 +9,14 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    
     @IBOutlet weak var favouriteCollection: UICollectionView!
     @IBOutlet weak var heroTable: UITableView!
     @IBOutlet weak var tabBarDown: UITabBar!
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var homeView: UIView!
     
-    let heroes: [String] = ["Lobezno", "Phoenix", "MsMarvel", "Pícara", "IronMan"]
-    let favouriteHeroes: [String] = ["Phoenix", "MsMarvel",  "IronMan", "Lobezno", "Pícara"]
+    let heroes = allHeroes
+    let favouriteHeroes = favHeroes
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +30,17 @@ class HomeViewController: UIViewController {
         
         
         heroTable.dataSource = self
-        heroTable.register(UINib(nibName: "HeroeCell", bundle: nil), forCellReuseIdentifier: "cellHeroe")
+        heroTable.delegate = self
+        heroTable.register(UINib(nibName: "HeroeCell", bundle: nil),
+                           forCellReuseIdentifier: "cellHeroe")
         heroTable.backgroundColor = UIColor.clear
         heroTable.backgroundView = UIView.init(frame: CGRect.zero)
         
         
         favouriteCollection.dataSource = self
-        favouriteCollection.register(UINib(nibName: "CustomCollectionCell", bundle: nil), forCellWithReuseIdentifier: "cellFav")
+        favouriteCollection.delegate = self
+        favouriteCollection.register(UINib(nibName: "CustomCollectionCell", bundle: nil),
+                                     forCellWithReuseIdentifier: "cellFav")
         favouriteCollection.backgroundColor = UIColor.clear
         favouriteCollection.backgroundView = UIView.init(frame: CGRect.zero)
         
@@ -46,42 +49,65 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         return heroes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = heroTable.dequeueReusableCell(withIdentifier: "cellHeroe", for: indexPath) as! HeroeCell
-        
-        cell.heroeName.text = heroes[indexPath.row]
-        cell.heroeImage?.image = UIImage(named: heroes[indexPath.row])
+        let cell = heroTable.dequeueReusableCell(withIdentifier: "cellHeroe",
+                                                 for: indexPath) as! HeroeCell
+        cell.heroeName.text = heroes[indexPath.row].name
+        cell.heroeImage?.image =  heroes[indexPath.row].image
         
         return cell
         
     }
 }
 
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let heroeDetailed = allHeroes[indexPath.row]
+        let heroDetail = DetailViewController(model: heroeDetailed)
+        
+        
+        print("\(heroeDetailed.name)")
+        navigationController?.pushViewController(heroDetail,
+                                                 animated: true)
+    }
+}
+
 extension HomeViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         return favouriteHeroes.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let favCell = favouriteCollection.dequeueReusableCell(withReuseIdentifier: "cellFav", for: indexPath) as! CustomCollectionCell
-        
-        favCell.favImage.image = UIImage(named: favouriteHeroes[indexPath.row])
-        favCell.favLabel.text = favouriteHeroes[indexPath.row]
-        
-        
-        
+        let favCell = favouriteCollection.dequeueReusableCell(withReuseIdentifier: "cellFav",
+                                                              for: indexPath) as! CustomCollectionCell
+        favCell.favImage.image = favouriteHeroes[indexPath.row].image
+        favCell.favLabel.text = favouriteHeroes[indexPath.row].name
         
         return favCell
     }
-    
-    
+}
+
+extension HomeViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let heroeDetailed = favHeroes[indexPath.row]
+        let heroDetail = DetailViewController(model: heroeDetailed)
+        
+        
+        print("\(heroeDetailed.name)")
+        navigationController?.pushViewController(heroDetail,
+                                                 animated: true)
+    }
 }

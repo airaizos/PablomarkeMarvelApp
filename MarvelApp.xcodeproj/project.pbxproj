@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399662142A70156C00348332 /* CustomCollectionCell.swift */; };
 		399662172A70156C00348332 /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399662152A70156C00348332 /* CustomCollectionCell.xib */; };
+		39982A372A710AEC00B4056F /* Heroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39982A362A710AEC00B4056F /* Heroe.swift */; };
+		39982A392A710C4F00B4056F /* HeroesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39982A382A710C4F00B4056F /* HeroesList.swift */; };
 		39A2B8C12A6E5F3F00CA446A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */; };
 		39A2B8C22A6E5F3F00CA446A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */; };
 		39A2B8CA2A6E904C00CA446A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8C82A6E904C00CA446A /* DetailViewController.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		399662142A70156C00348332 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		399662152A70156C00348332 /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
+		39982A362A710AEC00B4056F /* Heroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroe.swift; sourceTree = "<group>"; };
+		39982A382A710C4F00B4056F /* HeroesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesList.swift; sourceTree = "<group>"; };
 		39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		39A2B8C82A6E904C00CA446A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 		39F03C642A6D8C8900B9DD2F = {
 			isa = PBXGroup;
 			children = (
+				39982A382A710C4F00B4056F /* HeroesList.swift */,
 				399662142A70156C00348332 /* CustomCollectionCell.swift */,
 				399662152A70156C00348332 /* CustomCollectionCell.xib */,
 				39A2B8D02A6EC81200CA446A /* HeroeCell.swift */,
@@ -130,6 +135,7 @@
 				39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */,
 				39A2B8C82A6E904C00CA446A /* DetailViewController.swift */,
 				39A2B8C92A6E904C00CA446A /* DetailViewController.xib */,
+				39982A362A710AEC00B4056F /* Heroe.swift */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -289,8 +295,10 @@
 			files = (
 				39F03CA22A6D8D2700B9DD2F /* LoginViewController.swift in Sources */,
 				39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */,
+				39982A372A710AEC00B4056F /* Heroe.swift in Sources */,
 				399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */,
 				39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */,
+				39982A392A710C4F00B4056F /* HeroesList.swift in Sources */,
 				39A2B8C12A6E5F3F00CA446A /* HomeViewController.swift in Sources */,
 				39A2B8CA2A6E904C00CA446A /* DetailViewController.swift in Sources */,
 			);
