@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		396EF5962A77B08800128ED5 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EF5952A77B08800128ED5 /* DataDecoder.swift */; };
 		399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399662142A70156C00348332 /* CustomCollectionCell.swift */; };
 		399662172A70156C00348332 /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399662152A70156C00348332 /* CustomCollectionCell.xib */; };
 		39982A372A710AEC00B4056F /* Heroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39982A362A710AEC00B4056F /* Heroe.swift */; };
@@ -17,6 +18,9 @@
 		39A2B8CB2A6E904C00CA446A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8C92A6E904C00CA446A /* DetailViewController.xib */; };
 		39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8D02A6EC81200CA446A /* HeroeCell.swift */; };
 		39A2B8D32A6EC81200CA446A /* HeroeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8D12A6EC81200CA446A /* HeroeCell.xib */; };
+		39D05D432A725DA700468A9E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D05D422A725DA700468A9E /* Networking.swift */; };
+		39D05D462A72620F00468A9E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 39D05D452A72620F00468A9E /* Alamofire */; };
+		39D05D482A726A3700468A9E /* NetHeroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D05D472A726A3700468A9E /* NetHeroe.swift */; };
 		39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */; };
 		39F03C782A6D8C8900B9DD2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F03C762A6D8C8900B9DD2F /* Main.storyboard */; };
 		39F03C7A2A6D8C8B00B9DD2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39F03C792A6D8C8B00B9DD2F /* Assets.xcassets */; };
@@ -46,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		396EF5952A77B08800128ED5 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		399662142A70156C00348332 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		399662152A70156C00348332 /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		39982A362A710AEC00B4056F /* Heroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroe.swift; sourceTree = "<group>"; };
@@ -56,6 +61,8 @@
 		39A2B8C92A6E904C00CA446A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		39A2B8D02A6EC81200CA446A /* HeroeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeCell.swift; sourceTree = "<group>"; };
 		39A2B8D12A6EC81200CA446A /* HeroeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeCell.xib; sourceTree = "<group>"; };
+		39D05D422A725DA700468A9E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		39D05D472A726A3700468A9E /* NetHeroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetHeroe.swift; sourceTree = "<group>"; };
 		39F03C6D2A6D8C8900B9DD2F /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39F03C772A6D8C8900B9DD2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39D05D462A72620F00468A9E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,14 +104,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39F03C642A6D8C8900B9DD2F = {
+		396EF5902A779D0500128ED5 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				39982A382A710C4F00B4056F /* HeroesList.swift */,
 				399662142A70156C00348332 /* CustomCollectionCell.swift */,
 				399662152A70156C00348332 /* CustomCollectionCell.xib */,
 				39A2B8D02A6EC81200CA446A /* HeroeCell.swift */,
 				39A2B8D12A6EC81200CA446A /* HeroeCell.xib */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		396EF5912A779D2000128ED5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39F03C762A6D8C8900B9DD2F /* Main.storyboard */,
+				39F03C7B2A6D8C8B00B9DD2F /* LaunchScreen.storyboard */,
+				39F03CA12A6D8D2700B9DD2F /* LoginViewController.xib */,
+				39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */,
+				39A2B8C92A6E904C00CA446A /* DetailViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		396EF5922A779D3400128ED5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				39F03CA02A6D8D2700B9DD2F /* LoginViewController.swift */,
+				39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */,
+				39A2B8C82A6E904C00CA446A /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		396EF5932A779D4900128ED5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				39D05D422A725DA700468A9E /* Networking.swift */,
+				396EF5952A77B08800128ED5 /* DataDecoder.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		396EF5942A779D5800128ED5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				39982A382A710C4F00B4056F /* HeroesList.swift */,
+				39982A362A710AEC00B4056F /* Heroe.swift */,
+				39D05D472A726A3700468A9E /* NetHeroe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		39F03C642A6D8C8900B9DD2F = {
+			isa = PBXGroup;
+			children = (
 				39F03C6F2A6D8C8900B9DD2F /* MarvelApp */,
 				39F03C862A6D8C8B00B9DD2F /* MarvelAppTests */,
 				39F03C902A6D8C8B00B9DD2F /* MarvelAppUITests */,
@@ -124,18 +179,14 @@
 		39F03C6F2A6D8C8900B9DD2F /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				396EF5902A779D0500128ED5 /* CustomCells */,
+				396EF5932A779D4900128ED5 /* Networking */,
+				396EF5942A779D5800128ED5 /* Models */,
+				396EF5922A779D3400128ED5 /* Controllers */,
+				396EF5912A779D2000128ED5 /* Views */,
 				39F03C792A6D8C8B00B9DD2F /* Assets.xcassets */,
 				39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */,
-				39F03C762A6D8C8900B9DD2F /* Main.storyboard */,
-				39F03C7B2A6D8C8B00B9DD2F /* LaunchScreen.storyboard */,
 				39F03C7E2A6D8C8B00B9DD2F /* Info.plist */,
-				39F03CA02A6D8D2700B9DD2F /* LoginViewController.swift */,
-				39F03CA12A6D8D2700B9DD2F /* LoginViewController.xib */,
-				39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */,
-				39A2B8C02A6E5F3F00CA446A /* HomeViewController.xib */,
-				39A2B8C82A6E904C00CA446A /* DetailViewController.swift */,
-				39A2B8C92A6E904C00CA446A /* DetailViewController.xib */,
-				39982A362A710AEC00B4056F /* Heroe.swift */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -173,6 +224,9 @@
 			dependencies = (
 			);
 			name = MarvelApp;
+			packageProductDependencies = (
+				39D05D452A72620F00468A9E /* Alamofire */,
+			);
 			productName = MarvelApp;
 			productReference = 39F03C6D2A6D8C8900B9DD2F /* MarvelApp.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +299,9 @@
 				Base,
 			);
 			mainGroup = 39F03C642A6D8C8900B9DD2F;
+			packageReferences = (
+				39D05D442A72620F00468A9E /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 39F03C6E2A6D8C8900B9DD2F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,8 +351,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				39F03CA22A6D8D2700B9DD2F /* LoginViewController.swift in Sources */,
+				396EF5962A77B08800128ED5 /* DataDecoder.swift in Sources */,
+				39D05D482A726A3700468A9E /* NetHeroe.swift in Sources */,
 				39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */,
 				39982A372A710AEC00B4056F /* Heroe.swift in Sources */,
+				39D05D432A725DA700468A9E /* Networking.swift in Sources */,
 				399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */,
 				39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */,
 				39982A392A710C4F00B4056F /* HeroesList.swift in Sources */,
@@ -636,6 +696,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		39D05D442A72620F00468A9E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		39D05D452A72620F00468A9E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 39D05D442A72620F00468A9E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39F03C652A6D8C8900B9DD2F /* Project object */;
 }

@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         heroTable.delegate = self
         heroTable.register(UINib(nibName: "HeroeCell", bundle: nil),
                            forCellReuseIdentifier: "cellHeroe")
+        
         heroTable.backgroundColor = UIColor.clear
         heroTable.backgroundView = UIView.init(frame: CGRect.zero)
         
@@ -72,12 +73,12 @@ extension HomeViewController: UITableViewDataSource{
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let heroeDetailed = allHeroes[indexPath.row]
-        let heroDetail = DetailViewController(model: heroeDetailed)
+        //let heroDetail = DetailViewController(model: heroeDetailed)
         
         
         print("\(heroeDetailed.name)")
-        navigationController?.pushViewController(heroDetail,
-                                                 animated: true)
+       // navigationController?.pushViewController(heroDetail,
+         //                                        animated: true)
     }
 }
 
@@ -103,11 +104,11 @@ extension HomeViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let heroeDetailed = favHeroes[indexPath.row]
-        let heroDetail = DetailViewController(model: heroeDetailed)
+       // let heroDetail = DetailViewController(model: heroeDetailed)
         
         
         print("\(heroeDetailed.name)")
-        navigationController?.pushViewController(heroDetail,
-                                                 animated: true)
+       // navigationController?.pushViewController(heroDetail,
+        //                                         animated: true)
     }
 }

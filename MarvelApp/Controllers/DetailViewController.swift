@@ -43,8 +43,8 @@ class DetailViewController: UIViewController {
     }
     func syncModel() {
         heroName.text = model.name
-        heroImage.image = model.image
-        backgroundImage.image = model.image
+        heroImage.image = UIImage(named: "Lobezno")
+        backgroundImage.image = UIImage(named: "Lobezno")
     }
 }
 

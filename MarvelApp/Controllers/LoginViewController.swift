@@ -30,7 +30,14 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func enterAction(_ sender: Any) {
-        let home = HomeViewController()
-        navigationController?.pushViewController(home, animated: true)
+        NetWorking.shared.getAllheroes(success: { allHeroes in
+            let home = HomeViewController()
+            
+            self.navigationController?.pushViewController(home,
+                                                     animated: true)
+        }, failure: { error in
+            print("Error")
+        })
+        
     }
 }
