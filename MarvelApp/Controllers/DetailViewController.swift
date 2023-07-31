@@ -21,7 +21,9 @@ class DetailViewController: UIViewController {
     
     init(model: Heroe) {
         self.model = model
-        super.init(nibName: nil, bundle: nil)
+        
+        super.init(nibName: nil,
+                   bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -31,16 +33,12 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         syncModel()
-        
         heroName.textColor = UIColor.black
-        
         view.backgroundColor = UIColor(named: "myRed")
-        
         backgroundImage.contentMode = .center
-        
-        
-        
+      
     }
+    
     func syncModel() {
         heroName.text = model.name
         heroImage.image = UIImage(named: "Lobezno")

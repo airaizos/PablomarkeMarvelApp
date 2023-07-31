@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
 
@@ -15,9 +16,25 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var homeView: UIView!
     
-    let heroes = allHeroes
+    
+    //MARK: Model
+    var model: Data
+    
+    init(_ model: Data){
+        self.model = model
+        super.init(nibName: nil,
+                   bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    //Modelos de prueba sin api
+    let heroes = allHeroes2
     let favouriteHeroes = favHeroes
     
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,10 +45,11 @@ class HomeViewController: UIViewController {
         
         tabBarDown.barTintColor = UIColor(named: "myRed")
         
-        
+        // TAbla
         heroTable.dataSource = self
         heroTable.delegate = self
-        heroTable.register(UINib(nibName: "HeroeCell", bundle: nil),
+        heroTable.register(UINib(nibName: "HeroeCell",
+                                 bundle: nil),
                            forCellReuseIdentifier: "cellHeroe")
         
         heroTable.backgroundColor = UIColor.clear
@@ -40,21 +58,20 @@ class HomeViewController: UIViewController {
         
         favouriteCollection.dataSource = self
         favouriteCollection.delegate = self
-        favouriteCollection.register(UINib(nibName: "CustomCollectionCell", bundle: nil),
+        favouriteCollection.register(UINib(nibName: "CustomCollectionCell",
+                                           bundle: nil),
                                      forCellWithReuseIdentifier: "cellFav")
         favouriteCollection.backgroundColor = UIColor.clear
         favouriteCollection.backgroundView = UIView.init(frame: CGRect.zero)
-        
-        
+    
     }
-
 }
 
 extension HomeViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return heroes.count
+        return model.count
     }
     
     func tableView(_ tableView: UITableView,
@@ -62,8 +79,10 @@ extension HomeViewController: UITableViewDataSource{
         
         let cell = heroTable.dequeueReusableCell(withIdentifier: "cellHeroe",
                                                  for: indexPath) as! HeroeCell
-        cell.heroeName.text = heroes[indexPath.row].name
-        cell.heroeImage?.image =  heroes[indexPath.row].image
+        
+        cell.heroeName.text = model.results![indexPath.row].name
+        let imageUrl = URL(string: model.results![indexPath.row].thumbnail.ThumbnailComplete())
+        cell.heroeImage?.kf.setImage(with: imageUrl)
         
         return cell
         
@@ -71,8 +90,9 @@ extension HomeViewController: UITableViewDataSource{
 }
 
 extension HomeViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let heroeDetailed = allHeroes[indexPath.row]
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
+        let heroeDetailed = allHeroes2[indexPath.row]
         //let heroDetail = DetailViewController(model: heroeDetailed)
         
         
@@ -101,12 +121,11 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 extension HomeViewController: UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
         
         let heroeDetailed = favHeroes[indexPath.row]
        // let heroDetail = DetailViewController(model: heroeDetailed)
-        
-        
         print("\(heroeDetailed.name)")
        // navigationController?.pushViewController(heroDetail,
         //                                         animated: true)

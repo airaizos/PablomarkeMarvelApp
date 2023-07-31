@@ -14,5 +14,5 @@ let phoenix = Heroe(name: "Phoenix", image: UIImage(named: "Phoenix")!)
 let msMarvel = Heroe(name: "MsMarvel", image: UIImage(named: "MsMarvel")!)
 let picara = Heroe(name: "Pícara", image: UIImage(named: "Pícara")!)
 
-var allHeroes = [lobezno, ironMan, phoenix, msMarvel, picara]
+var allHeroes2 = [lobezno, ironMan, phoenix, msMarvel, picara]
 var favHeroes = [phoenix, msMarvel, picara]
