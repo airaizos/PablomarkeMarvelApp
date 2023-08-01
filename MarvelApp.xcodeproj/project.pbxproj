@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		396EF5962A77B08800128ED5 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396EF5952A77B08800128ED5 /* DataDecoder.swift */; };
 		396EF5992A77FA6B00128ED5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 396EF5982A77FA6B00128ED5 /* Kingfisher */; };
+		39732AF12A78FAC900F4E500 /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39732AEF2A78FAC900F4E500 /* HeroesCollectionViewCell.swift */; };
+		39732AF22A78FAC900F4E500 /* HeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39732AF02A78FAC900F4E500 /* HeroesCollectionViewCell.xib */; };
 		399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399662142A70156C00348332 /* CustomCollectionCell.swift */; };
 		399662172A70156C00348332 /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399662152A70156C00348332 /* CustomCollectionCell.xib */; };
 		39982A372A710AEC00B4056F /* Heroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39982A362A710AEC00B4056F /* Heroe.swift */; };
@@ -52,6 +54,8 @@
 
 /* Begin PBXFileReference section */
 		396EF5952A77B08800128ED5 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
+		39732AEF2A78FAC900F4E500 /* HeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewCell.swift; sourceTree = "<group>"; };
+		39732AF02A78FAC900F4E500 /* HeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesCollectionViewCell.xib; sourceTree = "<group>"; };
 		399662142A70156C00348332 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		399662152A70156C00348332 /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		39982A362A710AEC00B4056F /* Heroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroe.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				399662152A70156C00348332 /* CustomCollectionCell.xib */,
 				39A2B8D02A6EC81200CA446A /* HeroeCell.swift */,
 				39A2B8D12A6EC81200CA446A /* HeroeCell.xib */,
+				39732AEF2A78FAC900F4E500 /* HeroesCollectionViewCell.swift */,
+				39732AF02A78FAC900F4E500 /* HeroesCollectionViewCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 			files = (
 				399662172A70156C00348332 /* CustomCollectionCell.xib in Resources */,
 				39F03CA32A6D8D2700B9DD2F /* LoginViewController.xib in Resources */,
+				39732AF22A78FAC900F4E500 /* HeroesCollectionViewCell.xib in Resources */,
 				39A2B8D32A6EC81200CA446A /* HeroeCell.xib in Resources */,
 				39A2B8CB2A6E904C00CA446A /* DetailViewController.xib in Resources */,
 				39F03C7D2A6D8C8B00B9DD2F /* LaunchScreen.storyboard in Resources */,
@@ -356,6 +363,7 @@
 			files = (
 				39F03CA22A6D8D2700B9DD2F /* LoginViewController.swift in Sources */,
 				396EF5962A77B08800128ED5 /* DataDecoder.swift in Sources */,
+				39732AF12A78FAC900F4E500 /* HeroesCollectionViewCell.swift in Sources */,
 				39D05D482A726A3700468A9E /* NetHeroe.swift in Sources */,
 				39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */,
 				39982A372A710AEC00B4056F /* Heroe.swift in Sources */,

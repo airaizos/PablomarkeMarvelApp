@@ -6,20 +6,18 @@
 //
 
 import UIKit
-
-
+import Kingfisher
 
 class DetailViewController: UIViewController {
+    
     @IBOutlet weak var backgroundImage: UIImageView!
-    
-    
     @IBOutlet weak var heroDescription: UILabel!
     @IBOutlet weak var heroName: UILabel!
     @IBOutlet weak var heroImage: UIImageView!
     
-    var model: Heroe
+    var model: HeroeData
     
-    init(model: Heroe) {
+    init(model: HeroeData) {
         self.model = model
         
         super.init(nibName: nil,
@@ -32,6 +30,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         syncModel()
         heroName.textColor = UIColor.black
         view.backgroundColor = UIColor(named: "myRed")
@@ -41,8 +40,11 @@ class DetailViewController: UIViewController {
     
     func syncModel() {
         heroName.text = model.name
-        heroImage.image = UIImage(named: "Lobezno")
-        backgroundImage.image = UIImage(named: "Lobezno")
+        heroDescription.text = model.description
+        
+        let imageUrl = URL(string: model.thumbnail.ThumbnailComplete())
+        heroImage.kf.setImage(with: imageUrl)
+        backgroundImage.kf.setImage(with: imageUrl)
     }
 }
 

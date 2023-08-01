@@ -21,21 +21,24 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ums-8N-qJ2">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ums-8N-qJ2">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZQ-Wv-OQd">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bZQ-Wv-OQd">
                             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sir-Qs-Gsi">
-                            <rect key="frame" x="76" y="132" width="240" height="128"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sir-Qs-Gsi">
+                            <rect key="frame" x="76" y="132" width="241" height="128"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="128" id="cgb-im-cbB"/>
+                            </constraints>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10G-8g-6o9">
-                            <rect key="frame" x="159" y="571" width="75" height="35"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10G-8g-6o9">
+                            <rect key="frame" x="116.66666666666669" y="552" width="160" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="3YT-BU-CBe"/>
+                                <constraint firstAttribute="width" constant="160" id="fYl-Ya-GYF"/>
+                            </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="Button"/>
                             <connections>
@@ -44,10 +47,28 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="sir-Qs-Gsi" firstAttribute="centerX" secondItem="bZQ-Wv-OQd" secondAttribute="centerX" id="3Ch-8O-tsj"/>
+                        <constraint firstItem="sir-Qs-Gsi" firstAttribute="leading" secondItem="ums-8N-qJ2" secondAttribute="leading" constant="76" id="7Z4-nt-zdt"/>
+                        <constraint firstItem="10G-8g-6o9" firstAttribute="centerX" secondItem="ums-8N-qJ2" secondAttribute="centerX" id="90Q-Gj-tbo"/>
+                        <constraint firstItem="10G-8g-6o9" firstAttribute="centerX" secondItem="sir-Qs-Gsi" secondAttribute="centerX" id="OXg-xY-tkH"/>
+                        <constraint firstItem="bZQ-Wv-OQd" firstAttribute="centerY" secondItem="ums-8N-qJ2" secondAttribute="centerY" id="St7-IZ-1Ej"/>
+                        <constraint firstItem="10G-8g-6o9" firstAttribute="centerX" secondItem="bZQ-Wv-OQd" secondAttribute="centerX" id="WiP-sn-1e7"/>
+                        <constraint firstAttribute="bottom" secondItem="10G-8g-6o9" secondAttribute="bottom" constant="240" id="YpR-u7-GKG"/>
+                        <constraint firstItem="bZQ-Wv-OQd" firstAttribute="top" secondItem="ums-8N-qJ2" secondAttribute="top" id="bJh-fk-fFM"/>
+                        <constraint firstItem="bZQ-Wv-OQd" firstAttribute="leading" secondItem="ums-8N-qJ2" secondAttribute="leading" id="dgf-dx-4ul"/>
+                        <constraint firstItem="sir-Qs-Gsi" firstAttribute="top" secondItem="ums-8N-qJ2" secondAttribute="top" constant="132" id="y1u-47-9ev"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ums-8N-qJ2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="47g-t1-XBR"/>
+                <constraint firstItem="ums-8N-qJ2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="K5a-fP-s2O"/>
+                <constraint firstItem="ums-8N-qJ2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OSx-tw-hfY"/>
+                <constraint firstItem="ums-8N-qJ2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vaS-ff-Jc8"/>
+            </constraints>
             <point key="canvasLocation" x="96.946564885496173" y="-11.267605633802818"/>
         </view>
     </objects>
