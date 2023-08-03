@@ -105,12 +105,9 @@ extension DetailViewController: UITableViewDataSource {
             detailCell.textLabel?.text = model.stories.items[indexPath.row].name
             return detailCell
         }
-        
-            detailCell.textLabel?.text = model.events.items[indexPath.row].name
+         detailCell.textLabel?.text = model.events.items[indexPath.row].name
         return detailCell
-           
-        
-        
+          
     }
 }
 

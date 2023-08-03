@@ -17,7 +17,7 @@ class NetWorking {
     
     func getAllheroes(success: @escaping (_ allHeroes: Data) -> (),
                       failure: @escaping(_ error: Error?) -> () ) {
-        let heroesUrl = baseUrl + "characters?ts=thesoer&apikey=01515cae6da0a0113d6269bc211e8fdd&hash=9a702ff5d9178eec6b3475a917573c7e"
+        let heroesUrl = baseUrl + "characters" + APIKEY
         
         AF.request(heroesUrl, method: .get).validate(statusCode: statusOk).responseDecodable(of: ResponseHeroe.self,
                                                                                              decoder: DataDecoder()) {
@@ -35,7 +35,7 @@ class NetWorking {
                   success: @escaping (_ heroe: [HeroeData]) -> (),
                   failure: @escaping(_ error: Error?) -> () ){
         let id = String(id)
-        let heroeUrl = baseUrl + "characters/\(id)?ts=thesoer&apikey=01515cae6da0a0113d6269bc211e8fdd&hash=9a702ff5d9178eec6b3475a917573c7e"
+        let heroeUrl = baseUrl + "characters/\(id)" + APIKEY
         
         AF.request(heroeUrl,
                    method: .get).validate(statusCode: statusOk).responseDecodable (of: ResponseHeroe.self,
