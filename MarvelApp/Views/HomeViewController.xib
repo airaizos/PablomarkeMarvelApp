@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,9 +13,10 @@
             <connections>
                 <outlet property="favouriteCollection" destination="Pso-lG-Vgz" id="GTq-ea-f5M"/>
                 <outlet property="heroesCollection" destination="Isw-jn-Npf" id="FJU-6j-BeE"/>
-                <outlet property="homeImage" destination="mtm-Oe-M0b" id="Vgc-He-bdV"/>
                 <outlet property="homeView" destination="VJi-iv-Nh3" id="kA1-Y0-v7S"/>
                 <outlet property="tabBarDown" destination="19l-RR-iGw" id="SUe-vC-ohM"/>
+                <outlet property="topConstraint" destination="G3M-fQ-Vs9" id="6Od-22-oh0"/>
+                <outlet property="topView" destination="vYc-3Z-Bat" id="UTW-Au-VSJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,21 +28,48 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-iv-Nh3">
                     <rect key="frame" x="0.0" y="0.0" width="399" height="852"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Universe" translatesAutoresizingMaskIntoConstraints="NO" id="mtm-Oe-M0b">
-                            <rect key="frame" x="0.0" y="88" width="1779" height="673"/>
-                        </imageView>
-                        <tabBar contentMode="scaleToFill" id="19l-RR-iGw">
-                            <rect key="frame" x="0.0" y="761" width="399" height="49"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <items>
-                                <tabBarItem title="Inicio" image="house.fill" catalog="system" id="pph-Uk-8RV"/>
-                                <tabBarItem title="Usuario" image="person.fill" catalog="system" id="ZeC-if-SmS"/>
-                                <tabBarItem title="Ajustes" image="gearshape" catalog="system" id="4Sk-cb-hbe"/>
-                            </items>
-                        </tabBar>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Isw-jn-Npf">
+                            <rect key="frame" x="26" y="269" width="347" height="492"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="347" id="FqC-hC-1Iw"/>
+                                <constraint firstAttribute="height" constant="492" id="Mgr-JA-xWL"/>
+                                <constraint firstAttribute="height" constant="492" id="ggu-FC-z93"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5an-PD-mKQ">
+                                <size key="itemSize" width="344" height="182"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYc-3Z-Bat">
+                            <rect key="frame" x="0.0" y="0.0" width="399" height="92"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="92" id="TTI-r6-SXf"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXj-GX-e9h">
+                            <rect key="frame" x="0.0" y="761" width="399" height="91"/>
+                            <subviews>
+                                <tabBar contentMode="scaleToFill" translucent="NO" id="19l-RR-iGw">
+                                    <rect key="frame" x="0.0" y="0.0" width="399" height="49"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <items>
+                                        <tabBarItem title="Inicio" image="house.fill" catalog="system" id="pph-Uk-8RV"/>
+                                        <tabBarItem title="Usuario" image="person.fill" catalog="system" id="ZeC-if-SmS"/>
+                                        <tabBarItem title="Ajustes" image="gearshape" catalog="system" id="4Sk-cb-hbe"/>
+                                    </items>
+                                    <color key="barTintColor" name="myRed"/>
+                                    <color key="selectedImageTintColor" name="myRed"/>
+                                </tabBar>
+                            </subviews>
+                            <color key="backgroundColor" name="myRed"/>
+                        </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pso-lG-Vgz">
-                            <rect key="frame" x="26" y="122" width="347" height="131"/>
+                            <rect key="frame" x="26" y="116" width="347" height="131"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="347" id="9pT-EX-tDd"/>
@@ -53,50 +82,43 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Isw-jn-Npf">
-                            <rect key="frame" x="26" y="269" width="347" height="492"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="492" id="Mgr-JA-xWL"/>
-                            </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5an-PD-mKQ">
-                                <size key="itemSize" width="344" height="182"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="mtm-Oe-M0b" firstAttribute="leading" secondItem="19l-RR-iGw" secondAttribute="leading" id="0jz-lF-rch"/>
-                        <constraint firstAttribute="trailing" secondItem="Isw-jn-Npf" secondAttribute="trailing" constant="26" id="5PD-se-iVW"/>
-                        <constraint firstItem="19l-RR-iGw" firstAttribute="top" secondItem="Isw-jn-Npf" secondAttribute="bottom" id="K7y-3f-r2c"/>
-                        <constraint firstItem="19l-RR-iGw" firstAttribute="top" secondItem="mtm-Oe-M0b" secondAttribute="bottom" id="K9H-1a-lXS"/>
-                        <constraint firstItem="Isw-jn-Npf" firstAttribute="top" secondItem="Pso-lG-Vgz" secondAttribute="bottom" constant="16" id="Myw-mr-7Pq"/>
-                        <constraint firstItem="mtm-Oe-M0b" firstAttribute="top" secondItem="VJi-iv-Nh3" secondAttribute="top" constant="88" id="O6W-D0-aAN"/>
-                        <constraint firstAttribute="trailing" secondItem="Pso-lG-Vgz" secondAttribute="trailing" constant="26" id="TCe-GH-VNn"/>
-                        <constraint firstItem="Pso-lG-Vgz" firstAttribute="leading" secondItem="VJi-iv-Nh3" secondAttribute="leading" constant="26" id="ibv-EO-sbq"/>
-                        <constraint firstItem="Isw-jn-Npf" firstAttribute="leading" secondItem="VJi-iv-Nh3" secondAttribute="leading" constant="26" id="sgN-Tp-A3q"/>
+                        <constraint firstItem="Isw-jn-Npf" firstAttribute="top" secondItem="vYc-3Z-Bat" secondAttribute="bottom" constant="177" id="G3M-fQ-Vs9"/>
+                        <constraint firstAttribute="trailing" secondItem="iXj-GX-e9h" secondAttribute="trailing" id="K7m-wn-g8d"/>
+                        <constraint firstItem="vYc-3Z-Bat" firstAttribute="leading" secondItem="iXj-GX-e9h" secondAttribute="leading" id="Kxq-2S-hIw"/>
+                        <constraint firstItem="vYc-3Z-Bat" firstAttribute="trailing" secondItem="iXj-GX-e9h" secondAttribute="trailing" id="MiD-wq-djh"/>
+                        <constraint firstAttribute="trailing" secondItem="Pso-lG-Vgz" secondAttribute="trailing" constant="26" id="To7-y2-Y3g"/>
+                        <constraint firstItem="Pso-lG-Vgz" firstAttribute="leading" secondItem="VJi-iv-Nh3" secondAttribute="leading" constant="26" id="VL4-dp-kAM"/>
+                        <constraint firstItem="Isw-jn-Npf" firstAttribute="top" secondItem="Pso-lG-Vgz" secondAttribute="bottom" constant="22" id="chx-Ex-mku"/>
+                        <constraint firstItem="vYc-3Z-Bat" firstAttribute="top" secondItem="VJi-iv-Nh3" secondAttribute="top" id="fDB-fZ-ljR"/>
+                        <constraint firstItem="iXj-GX-e9h" firstAttribute="top" secondItem="Isw-jn-Npf" secondAttribute="bottom" id="haR-mj-Y91"/>
+                        <constraint firstAttribute="trailing" secondItem="Isw-jn-Npf" secondAttribute="trailing" constant="26" id="lY7-WC-n66"/>
+                        <constraint firstAttribute="bottom" secondItem="Isw-jn-Npf" secondAttribute="bottom" constant="91" id="mmW-A6-IgU"/>
+                        <constraint firstItem="iXj-GX-e9h" firstAttribute="leading" secondItem="VJi-iv-Nh3" secondAttribute="leading" id="tXb-Pz-VY5"/>
+                        <constraint firstAttribute="bottom" secondItem="iXj-GX-e9h" secondAttribute="bottom" id="wTb-E5-bO1"/>
+                        <constraint firstItem="Isw-jn-Npf" firstAttribute="leading" secondItem="VJi-iv-Nh3" secondAttribute="leading" constant="26" id="yhJ-yE-gjq"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="VJi-iv-Nh3" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="CBI-tJ-uhw"/>
-                <constraint firstAttribute="trailing" secondItem="VJi-iv-Nh3" secondAttribute="trailing" constant="-6" id="OPG-ao-xx9"/>
-                <constraint firstItem="VJi-iv-Nh3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Yje-BN-HE2"/>
-                <constraint firstItem="VJi-iv-Nh3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="oET-cb-Ya2"/>
+                <constraint firstItem="VJi-iv-Nh3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ErJ-1S-t6d"/>
+                <constraint firstItem="VJi-iv-Nh3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="NXV-ki-cYO"/>
+                <constraint firstAttribute="bottom" secondItem="VJi-iv-Nh3" secondAttribute="bottom" id="gXc-eT-OhC"/>
             </constraints>
             <point key="canvasLocation" x="43.511450381679388" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
-        <image name="Universe" width="1779" height="3850"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <namedColor name="myRed">
+            <color red="0.85098039215686272" green="0.043137254901960784" blue="0.19215686274509805" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

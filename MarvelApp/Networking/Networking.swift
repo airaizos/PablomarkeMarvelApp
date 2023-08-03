@@ -25,10 +25,8 @@ class NetWorking {
             
             if let allHeroes = response.value?.data{
                 success(allHeroes)
-                print(allHeroes)
             } else {
                 failure(response.error)
-                print(response.error!)
             }
         }
     }

@@ -14,7 +14,9 @@ class HeroesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var HeroeImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        HeroeImage.layer.cornerRadius = 18
+        backgroundName.layer.cornerRadius = 18
     }
 
 }

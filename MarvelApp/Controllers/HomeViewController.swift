@@ -12,10 +12,13 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var heroesCollection: UICollectionView!
     @IBOutlet weak var favouriteCollection: UICollectionView!
-    @IBOutlet weak var heroTable: UITableView!
+    
     @IBOutlet weak var tabBarDown: UITabBar!
-    @IBOutlet weak var homeImage: UIImageView!
+    
     @IBOutlet weak var homeView: UIView!
+    @IBOutlet weak var topView: UIView!
+   
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     
     //MARK: Model
@@ -39,23 +42,25 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        homeView.backgroundColor = UIColor(named: "myRed")
-        
-        homeImage.image = UIImage(named: "Universe")
-        homeImage.contentMode = .scaleAspectFill
-        
-        tabBarDown.barTintColor = UIColor(named: "myRed")
+        homeView.backgroundColor = UIColor.black
+        topView.backgroundColor = UIColor(named: "myRed")
+      
         
         // Heroes collection
         heroesCollection.dataSource = self
         heroesCollection.delegate = self
         heroesCollection.register(UINib(nibName: "HeroesCollectionViewCell",
                                         bundle: nil), forCellWithReuseIdentifier: "HeroesCC")
-        
         heroesCollection.backgroundColor = UIColor.clear
         heroesCollection.backgroundView = UIView.init(frame: CGRect.zero)
         
-        // Collection favourite
+        // Collection favourites
+        
+        if favouriteHeroes.isEmpty {
+            favouriteCollection.isHidden = true
+            topConstraint.constant = 24
+            
+        }
         favouriteCollection.dataSource = self
         favouriteCollection.delegate = self
         favouriteCollection.register(UINib(nibName: "CustomCollectionCell",

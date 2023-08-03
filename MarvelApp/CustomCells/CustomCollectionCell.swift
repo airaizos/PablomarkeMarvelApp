@@ -15,6 +15,7 @@ class CustomCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
        
         favImage.contentMode = .scaleAspectFill
+        favImage.layer.cornerRadius = 12
         
     }
 

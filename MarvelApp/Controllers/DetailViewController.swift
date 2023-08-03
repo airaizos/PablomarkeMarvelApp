@@ -10,8 +10,6 @@ import Kingfisher
 
 class DetailViewController: UIViewController {
     
-    
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var heroDescription: UILabel!
     @IBOutlet weak var heroName: UILabel!
     @IBOutlet weak var heroImage: UIImageView!
@@ -34,27 +32,23 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         syncModel()
-        heroName.textColor = UIColor.black
-        view.backgroundColor = UIColor(named: "myRed")
-        backgroundImage.contentMode = .center
-        
+        heroName.textColor = UIColor(named: "myRedLow")
+        view.backgroundColor = UIColor.black
+        heroDescription.textColor = UIColor(named: "myRedLow")
+        heroImage.layer.cornerRadius = 12
         detailstable.backgroundColor = UIColor.clear
         detailstable.backgroundView = UIView.init(frame: CGRect.zero)
         detailstable.dataSource = self
         detailstable.delegate = self
         
-        //detailstable.register(UINib(nibName: "ComicTableViewCell",
-          //                          bundle: nil), forCellReuseIdentifier: "ComicCell")
-      
     }
     
     func syncModel() {
         heroName.text = model.name
         heroDescription.text = model.description
-        
         let imageUrl = URL(string: model.thumbnail.ThumbnailComplete())
         heroImage.kf.setImage(with: imageUrl)
-        backgroundImage.kf.setImage(with: imageUrl)
+        
     }
 }
 
@@ -65,6 +59,8 @@ extension DetailViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView,
                    titleForHeaderInSection section: Int) -> String? {
+        
+        
         if section == 0 {
             return "Comics"
         }
@@ -76,6 +72,7 @@ extension DetailViewController: UITableViewDataSource {
         }
        return "Events"
     }
+    
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -94,6 +91,7 @@ extension DetailViewController: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let detailCell = UITableViewCell(style: .default,
                                          reuseIdentifier: "detailsCell")
+        detailCell.textLabel?.textColor = UIColor(named: "myRedLow")
         
         if indexPath.section == 0 {
             detailCell.textLabel?.text = model.comics.items[indexPath.row].name
@@ -115,8 +113,9 @@ extension DetailViewController: UITableViewDataSource {
         
     }
 }
+
 extension DetailViewController: UITableViewDelegate {
-    
+   
 }
 
 
