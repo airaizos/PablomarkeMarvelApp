@@ -11,6 +11,8 @@
 		396EF5992A77FA6B00128ED5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 396EF5982A77FA6B00128ED5 /* Kingfisher */; };
 		39732AF12A78FAC900F4E500 /* HeroesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39732AEF2A78FAC900F4E500 /* HeroesCollectionViewCell.swift */; };
 		39732AF22A78FAC900F4E500 /* HeroesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39732AF02A78FAC900F4E500 /* HeroesCollectionViewCell.xib */; };
+		397D917C2A7A56FD00DD0683 /* ComicTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397D917A2A7A56FD00DD0683 /* ComicTableViewCell.swift */; };
+		397D917D2A7A56FD00DD0683 /* ComicTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 397D917B2A7A56FD00DD0683 /* ComicTableViewCell.xib */; };
 		399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399662142A70156C00348332 /* CustomCollectionCell.swift */; };
 		399662172A70156C00348332 /* CustomCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 399662152A70156C00348332 /* CustomCollectionCell.xib */; };
 		39982A372A710AEC00B4056F /* Heroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39982A362A710AEC00B4056F /* Heroe.swift */; };
@@ -56,6 +58,8 @@
 		396EF5952A77B08800128ED5 /* DataDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDecoder.swift; sourceTree = "<group>"; };
 		39732AEF2A78FAC900F4E500 /* HeroesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewCell.swift; sourceTree = "<group>"; };
 		39732AF02A78FAC900F4E500 /* HeroesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesCollectionViewCell.xib; sourceTree = "<group>"; };
+		397D917A2A7A56FD00DD0683 /* ComicTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTableViewCell.swift; sourceTree = "<group>"; };
+		397D917B2A7A56FD00DD0683 /* ComicTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComicTableViewCell.xib; sourceTree = "<group>"; };
 		399662142A70156C00348332 /* CustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionCell.swift; sourceTree = "<group>"; };
 		399662152A70156C00348332 /* CustomCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionCell.xib; sourceTree = "<group>"; };
 		39982A362A710AEC00B4056F /* Heroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heroe.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				39A2B8D12A6EC81200CA446A /* HeroeCell.xib */,
 				39732AEF2A78FAC900F4E500 /* HeroesCollectionViewCell.swift */,
 				39732AF02A78FAC900F4E500 /* HeroesCollectionViewCell.xib */,
+				397D917A2A7A56FD00DD0683 /* ComicTableViewCell.swift */,
+				397D917B2A7A56FD00DD0683 /* ComicTableViewCell.xib */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				39732AF22A78FAC900F4E500 /* HeroesCollectionViewCell.xib in Resources */,
 				39A2B8D32A6EC81200CA446A /* HeroeCell.xib in Resources */,
 				39A2B8CB2A6E904C00CA446A /* DetailViewController.xib in Resources */,
+				397D917D2A7A56FD00DD0683 /* ComicTableViewCell.xib in Resources */,
 				39F03C7D2A6D8C8B00B9DD2F /* LaunchScreen.storyboard in Resources */,
 				39A2B8C22A6E5F3F00CA446A /* HomeViewController.xib in Resources */,
 				39F03C7A2A6D8C8B00B9DD2F /* Assets.xcassets in Resources */,
@@ -366,6 +373,7 @@
 				39732AF12A78FAC900F4E500 /* HeroesCollectionViewCell.swift in Sources */,
 				39D05D482A726A3700468A9E /* NetHeroe.swift in Sources */,
 				39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */,
+				397D917C2A7A56FD00DD0683 /* ComicTableViewCell.swift in Sources */,
 				39982A372A710AEC00B4056F /* Heroe.swift in Sources */,
 				39D05D432A725DA700468A9E /* Networking.swift in Sources */,
 				399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */,

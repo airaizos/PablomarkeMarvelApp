@@ -40,6 +40,10 @@ struct HeroeData: Decodable {
     let name: String?
     let description: String?
     let thumbnail: Thumbnail
+    let comics: Comics
+    let series: Series
+    let stories: Stories
+    let events: Events
     
     enum CodingKeys: String,
                         CodingKey {
@@ -47,6 +51,10 @@ struct HeroeData: Decodable {
         case name
         case description
         case thumbnail
+        case comics
+        case series
+        case stories
+        case events
     }
 }
 
@@ -65,3 +73,75 @@ struct Thumbnail: Decodable {
         return totalUrl
     }
 }
+
+struct Comics: Decodable {
+    let available: Int
+    let collectionURI: String
+    let items: [ApiItems]
+    let returned: Int
+    
+    enum CodingKeys: String,
+                     CodingKey {
+        case available
+        case collectionURI
+        case items
+        case returned
+    }
+}
+
+struct Series: Decodable {
+    let available: Int
+    let collectionURI: String
+    let items: [ApiItems]
+    let returned: Int
+    
+    enum CodingKeys: String,
+                     CodingKey {
+        case available
+        case collectionURI
+        case items = "items"
+        case returned
+        
+    }
+}
+
+struct Stories: Decodable {
+    let available: Int
+    let collectionURI: String
+    let items: [ApiItems]
+    let returned: Int
+    
+    enum codingKeys: String, CodingKey {
+        case available
+        case collectionURI
+        case items
+        case returned
+    }
+}
+
+struct Events: Decodable {
+    let available: Int
+    let collectionURI: String
+    let items: [ApiItems]
+    let returned: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case available
+        case collectionURI
+        case items
+        case returned
+    }
+}
+
+struct ApiItems: Decodable {
+    let resourceURI: String
+    let name: String
+    
+    enum CodingKeys: String,
+                        CodingKey {
+        case resourceURI
+        case name
+    }
+}
+
+
