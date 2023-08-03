@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,9 +29,9 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtV-fL-HMh">
-                        <rect key="frame" x="6" y="158" width="332" height="20"/>
+                        <rect key="frame" x="16" y="158" width="322" height="20"/>
                         <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -40,7 +41,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="vtV-fL-HMh" secondAttribute="trailing" constant="6" id="9GB-JO-X91"/>
                 <constraint firstAttribute="trailing" secondItem="dQK-zx-fRm" secondAttribute="trailing" id="CFe-Fx-Ydd"/>
-                <constraint firstItem="vtV-fL-HMh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="GIg-ad-neb"/>
+                <constraint firstItem="vtV-fL-HMh" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="GIg-ad-neb"/>
                 <constraint firstItem="dQK-zx-fRm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GaL-Zy-00a"/>
                 <constraint firstItem="LWz-D2-4gz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LaO-aO-P58"/>
                 <constraint firstItem="dQK-zx-fRm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="V95-eb-xBN"/>
@@ -57,4 +58,9 @@
             <point key="canvasLocation" x="129.7709923664122" y="-11.267605633802818"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

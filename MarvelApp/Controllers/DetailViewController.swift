@@ -32,9 +32,10 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         syncModel()
-        heroName.textColor = UIColor(named: "myRedLow")
+        heroName.textColor = UIColor(named: "myOrange")
+        
         view.backgroundColor = UIColor.black
-        heroDescription.textColor = UIColor(named: "myRedLow")
+        heroDescription.textColor = UIColor(named: "myOrange")
         heroImage.layer.cornerRadius = 12
         detailstable.backgroundColor = UIColor.clear
         detailstable.backgroundView = UIView.init(frame: CGRect.zero)
@@ -91,7 +92,8 @@ extension DetailViewController: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let detailCell = UITableViewCell(style: .default,
                                          reuseIdentifier: "detailsCell")
-        detailCell.textLabel?.textColor = UIColor(named: "myRedLow")
+        detailCell.textLabel?.textColor = UIColor.systemBlue
+
         
         if indexPath.section == 0 {
             detailCell.textLabel?.text = model.comics.items[indexPath.row].name

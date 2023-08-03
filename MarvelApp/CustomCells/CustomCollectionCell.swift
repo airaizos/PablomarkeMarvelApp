@@ -15,6 +15,7 @@ class CustomCollectionCell: UICollectionViewCell {
         super.awakeFromNib()
        
         favImage.contentMode = .scaleAspectFill
+        favLabel.textColor = .white
         favImage.layer.cornerRadius = 12
         
     }
