@@ -42,9 +42,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        homeView.backgroundColor = UIColor.black
+        homeView.backgroundColor = UIColor(named: "falseBlack")
         topView.backgroundColor = UIColor(named: "myRed")
-      
+        self.navigationController?.navigationBar.tintColor = .black
+        
+        tabBarDown.unselectedItemTintColor = .black
+        tabBarDown.tintColor = .white
         
         // Heroes collection
         heroesCollection.dataSource = self
@@ -63,7 +66,7 @@ class HomeViewController: UIViewController {
         }
         favouriteCollection.dataSource = self
         favouriteCollection.delegate = self
-        favouriteCollection.register(UINib(nibName: "CustomCollectionCell",
+        favouriteCollection.register(UINib(nibName: "FavouriteCell",
                                            bundle: nil),
                                      forCellWithReuseIdentifier: "cellFav")
         favouriteCollection.backgroundColor = UIColor.clear
@@ -81,14 +84,15 @@ extension HomeViewController: UICollectionViewDataSource {
             return model.count
         }
     }
+    
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == favouriteCollection {
             let favCell = favouriteCollection.dequeueReusableCell(withReuseIdentifier: "cellFav",
-                                                                  for: indexPath) as! CustomCollectionCell
+                                                                  for: indexPath) as! FavouriteCell
             favCell.favImage.image = favouriteHeroes[indexPath.row].image
-            favCell.favLabel.text = favouriteHeroes[indexPath.row].name
+            favCell.favName.text = favouriteHeroes[indexPath.row].name
             
             return favCell
         } else {
@@ -102,7 +106,6 @@ extension HomeViewController: UICollectionViewDataSource {
             
             return cell
     }
-        
     }
 }
 
@@ -122,3 +125,4 @@ extension HomeViewController: UICollectionViewDelegate{
         }
     }
 }
+

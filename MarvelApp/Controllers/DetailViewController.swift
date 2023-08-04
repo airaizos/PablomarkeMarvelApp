@@ -10,6 +10,7 @@ import Kingfisher
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var heroDescription: UILabel!
     @IBOutlet weak var heroName: UILabel!
     @IBOutlet weak var heroImage: UIImageView!
@@ -32,21 +33,31 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         syncModel()
-        heroName.textColor = UIColor(named: "myOrange")
         
-        view.backgroundColor = UIColor.black
+        heroName.textColor = UIColor(named: "myOrange")
+        heroImage.contentMode = .scaleAspectFill
+        heroImage.layer.cornerRadius = 20
+        
+        self.navigationController?.navigationBar.tintColor = .black
+        tabBar.unselectedItemTintColor = .black
+        tabBar.tintColor = .white
+        view.backgroundColor = UIColor(named: "falseBlack")
         heroDescription.textColor = UIColor(named: "myOrange")
-        heroImage.layer.cornerRadius = 12
+        
+        
         detailstable.backgroundColor = UIColor.clear
         detailstable.backgroundView = UIView.init(frame: CGRect.zero)
         detailstable.dataSource = self
         detailstable.delegate = self
-        
     }
     
     func syncModel() {
         heroName.text = model.name
-        heroDescription.text = model.description
+        if model.description == "" {
+            heroDescription.text = "Sin descripción disponible"
+        } else {
+            heroDescription.text = model.description
+        }
         let imageUrl = URL(string: model.thumbnail.ThumbnailComplete())
         heroImage.kf.setImage(with: imageUrl)
         

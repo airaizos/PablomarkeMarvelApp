@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,7 +29,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJi-iv-Nh3">
                     <rect key="frame" x="0.0" y="0.0" width="399" height="852"/>
                     <subviews>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Isw-jn-Npf">
+                        <collectionView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Isw-jn-Npf">
                             <rect key="frame" x="26" y="269" width="347" height="492"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
@@ -43,9 +44,9 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                         </collectionView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYc-3Z-Bat">
+                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYc-3Z-Bat">
                             <rect key="frame" x="0.0" y="0.0" width="399" height="92"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="92" id="TTI-r6-SXf"/>
                             </constraints>
@@ -58,9 +59,16 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <items>
-                                        <tabBarItem title="Inicio" image="house.fill" catalog="system" id="pph-Uk-8RV"/>
-                                        <tabBarItem title="Usuario" image="person.fill" catalog="system" id="ZeC-if-SmS"/>
-                                        <tabBarItem title="Ajustes" image="gearshape" catalog="system" id="4Sk-cb-hbe"/>
+                                        <tabBarItem title="Inicio" id="pph-Uk-8RV">
+                                            <imageReference key="image" image="house.fill" catalog="system" symbolScale="default"/>
+                                            <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tabBarItem>
+                                        <tabBarItem title="Usuario" image="person.fill" catalog="system" id="ZeC-if-SmS">
+                                            <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tabBarItem>
+                                        <tabBarItem title="Ajustes" image="gearshape" catalog="system" id="4Sk-cb-hbe">
+                                            <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tabBarItem>
                                     </items>
                                     <color key="barTintColor" name="myRed"/>
                                     <color key="selectedImageTintColor" name="myRed"/>
