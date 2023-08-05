@@ -69,9 +69,9 @@ extension DetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
+    
     func tableView(_ tableView: UITableView,
                    titleForHeaderInSection section: Int) -> String? {
-        
         
         if section == 0 {
             return "Comics"
@@ -103,9 +103,9 @@ extension DetailViewController: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let detailCell = UITableViewCell(style: .default,
                                          reuseIdentifier: "detailsCell")
-        detailCell.textLabel?.textColor = UIColor.systemBlue
-
-        
+        detailCell.textLabel?.textColor = .systemBlue
+        detailCell.backgroundColor = UIColor.clear
+        detailCell.backgroundView = UIView.init(frame: CGRect.zero)
         if indexPath.section == 0 {
             detailCell.textLabel?.text = model.comics.items[indexPath.row].name
             return detailCell
@@ -122,6 +122,13 @@ extension DetailViewController: UITableViewDataSource {
         return detailCell
           
     }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = .white
+        header.textLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+    }
+    
 }
 
 extension DetailViewController: UITableViewDelegate {

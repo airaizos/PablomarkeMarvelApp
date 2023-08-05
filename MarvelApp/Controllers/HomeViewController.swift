@@ -43,9 +43,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .red
-        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
-                                          .foregroundColor: UIColor.white]
+        appearance.backgroundColor = UIColor(named: "myRed")
+        //appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
+             //                             .foregroundColor: UIColor.white]
 
         // Customizing our navigation bar
         navigationController?.navigationBar.tintColor = .white
@@ -66,7 +66,7 @@ class HomeViewController: UIViewController {
                                         bundle: nil), forCellWithReuseIdentifier: "HeroesCC")
         heroesCollection.backgroundColor = UIColor.clear
         heroesCollection.backgroundView = UIView.init(frame: CGRect.zero)
-        heroesCollection.inputViewController?.tabBarItem.scrollEdgeAppearance 
+        
         
         // Collection favourites
         
