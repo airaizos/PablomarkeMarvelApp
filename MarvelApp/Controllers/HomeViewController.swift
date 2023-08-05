@@ -37,10 +37,20 @@ class HomeViewController: UIViewController {
     //Modelos de prueba sin api
     let heroes = allHeroes2
     let favouriteHeroes = favHeroes
+    let appearance = UINavigationBarAppearance()
     
     // MARK: ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .red
+        appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
+                                          .foregroundColor: UIColor.white]
+
+        // Customizing our navigation bar
+        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         homeView.backgroundColor = UIColor(named: "falseBlack")
         topView.backgroundColor = UIColor(named: "myRed")
@@ -56,6 +66,7 @@ class HomeViewController: UIViewController {
                                         bundle: nil), forCellWithReuseIdentifier: "HeroesCC")
         heroesCollection.backgroundColor = UIColor.clear
         heroesCollection.backgroundView = UIView.init(frame: CGRect.zero)
+        heroesCollection.inputViewController?.tabBarItem.scrollEdgeAppearance 
         
         // Collection favourites
         
