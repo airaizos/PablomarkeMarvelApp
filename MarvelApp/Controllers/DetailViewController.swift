@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
         
         syncModel()
         
-        heroName.textColor = UIColor(named: "myOrange")
+        heroName.textColor = UIColor(named: "myRed")
         heroImage.contentMode = .scaleAspectFill
         heroImage.layer.cornerRadius = 20
         
@@ -42,7 +42,7 @@ class DetailViewController: UIViewController {
         tabBar.unselectedItemTintColor = .black
         tabBar.tintColor = .white
         view.backgroundColor = UIColor(named: "falseBlack")
-        heroDescription.textColor = UIColor(named: "myOrange")
+        heroDescription.textColor = UIColor(named: "myRedLow")
         
         
         detailstable.backgroundColor = UIColor.clear
@@ -103,7 +103,7 @@ extension DetailViewController: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let detailCell = UITableViewCell(style: .default,
                                          reuseIdentifier: "detailsCell")
-        detailCell.textLabel?.textColor = .systemBlue
+        detailCell.textLabel?.textColor = UIColor(named: "myOrange")
         detailCell.backgroundColor = UIColor.clear
         detailCell.backgroundView = UIView.init(frame: CGRect.zero)
         if indexPath.section == 0 {
@@ -125,7 +125,7 @@ extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = .white
+        header.textLabel?.textColor = UIColor(named: "myOrangeStrong")
         header.textLabel?.font = UIFont.boldSystemFont(ofSize: 22)
     }
     

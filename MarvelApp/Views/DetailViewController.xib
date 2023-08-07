@@ -79,7 +79,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" style="insetGrouped" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="22" estimatedSectionHeaderHeight="34" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KxA-OC-BQb">
+                <tableView clipsSubviews="YES" contentMode="center" alwaysBounceVertical="YES" style="insetGrouped" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="38" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KxA-OC-BQb">
                     <rect key="frame" x="8" y="416" width="377" height="346"/>
                     <color key="tintColor" name="myRedLow"/>
                     <edgeInsets key="layoutMargins" top="12" left="8" bottom="8" right="8"/>
