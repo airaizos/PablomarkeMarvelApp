@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class HomeViewController: UIViewController {
 
@@ -112,7 +111,19 @@ extension HomeViewController: UICollectionViewDataSource {
             
             cell.HeroeName.text = model.results![indexPath.row].name
             let imageUrl = URL(string: model.results![indexPath.row].thumbnail.ThumbnailComplete())
-            cell.HeroeImage?.kf.setImage(with: imageUrl)
+            
+            NetWorking.shared.requestImage(url: imageUrl) { image in
+                DispatchQueue.main.async {
+                    cell.HeroeImage.image = image
+                }
+            } failure: { error in
+                RunLoop.main.perform {
+                    cell.HeroeImage.image  = UIImage(named: "Logo")
+                }
+            }
+            
+            
+          //  cell.HeroeImage?.kf.setImage(with: imageUrl)
             cell.backgroundName.image = UIImage(named: "forNames")
             
             return cell

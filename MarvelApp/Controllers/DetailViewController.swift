@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 final class DetailViewController: UIViewController {
     
@@ -59,8 +58,14 @@ final class DetailViewController: UIViewController {
             heroDescription.text = model.description
         }
         let imageUrl = URL(string: model.thumbnail.ThumbnailComplete())
-        heroImage.kf.setImage(with: imageUrl)
         
+        NetWorking.shared.requestImage(url: imageUrl) { image in
+            self.heroImage.image = image
+        } failure: { error in
+            RunLoop.main.perform {
+                self.heroImage.image = UIImage(named: "Logo")
+            }
+        }
     }
 }
 
