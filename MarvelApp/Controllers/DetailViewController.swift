@@ -16,10 +16,11 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak var detailstable: UITableView!
     
     var model: HeroeData
+    let network: NetWorking
     
-    init(model: HeroeData) {
+    init(model: HeroeData, network: NetWorking = .shared) {
         self.model = model
-        
+        self.network = network
         super.init(nibName: nil,
                    bundle: nil)
     }
@@ -59,8 +60,10 @@ final class DetailViewController: UIViewController {
         }
         let imageUrl = URL(string: model.thumbnail.ThumbnailComplete())
         
-        NetWorking.shared.requestImage(url: imageUrl) { image in
-            self.heroImage.image = image
+        network.requestImage(url: imageUrl) { image in
+            DispatchQueue.main.async {
+                self.heroImage.image = image
+            }
         } failure: { error in
             RunLoop.main.perform {
                 self.heroImage.image = UIImage(named: "Logo")

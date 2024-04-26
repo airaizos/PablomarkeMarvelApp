@@ -14,6 +14,18 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var enterButton: UIButton!
     
+    let network: NetWorking
+    
+    init(network: NetWorking = .shared) {
+        self.network = network
+        super.init(nibName: nil,
+                   bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +44,7 @@ final class LoginViewController: UIViewController {
     
     //Button Action
     @IBAction func enterAction(_ sender: Any) {
-        NetWorking.shared.getAllHeroes(success: { allHeroes in
+        network.getAllHeroes(success: { allHeroes in
             let home = HomeViewController(allHeroes)
             self.navigationController?.pushViewController(home,
                                                           animated: true)

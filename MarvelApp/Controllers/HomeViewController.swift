@@ -8,7 +8,7 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-
+    
     @IBOutlet weak var heroesCollection: UICollectionView!
     @IBOutlet weak var favouriteCollection: UICollectionView!
     
@@ -16,15 +16,17 @@ final class HomeViewController: UIViewController {
     
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var topView: UIView!
-   
+    
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     
     
     //MARK: Model
     var model: HData
+    let network: NetWorking
     
-    init(_ model: HData){
+    init(_ model: HData, network: NetWorking = .shared){
         self.model = model
+        self.network = network
         super.init(nibName: nil,
                    bundle: nil)
     }
@@ -44,8 +46,8 @@ final class HomeViewController: UIViewController {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(named: "myRed")
         //appearance.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20.0),
-             //                             .foregroundColor: UIColor.white]
-
+        //                             .foregroundColor: UIColor.white]
+        
         // Customizing our navigation bar
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.standardAppearance = appearance
@@ -81,7 +83,7 @@ final class HomeViewController: UIViewController {
                                      forCellWithReuseIdentifier: "cellFav")
         favouriteCollection.backgroundColor = UIColor.clear
         favouriteCollection.backgroundView = UIView.init(frame: CGRect.zero)
-    
+        
     }
 }
 
@@ -107,12 +109,12 @@ extension HomeViewController: UICollectionViewDataSource {
             return favCell
         } else {
             let cell = heroesCollection.dequeueReusableCell(withReuseIdentifier: "HeroesCC",
-                                                     for: indexPath) as! HeroesCollectionViewCell
+                                                            for: indexPath) as! HeroesCollectionViewCell
             
             cell.HeroeName.text = model.results![indexPath.row].name
             let imageUrl = URL(string: model.results![indexPath.row].thumbnail.ThumbnailComplete())
             
-            NetWorking.shared.requestImage(url: imageUrl) { image in
+            network.requestImage(url: imageUrl) { image in
                 DispatchQueue.main.async {
                     cell.HeroeImage.image = image
                 }
@@ -122,12 +124,10 @@ extension HomeViewController: UICollectionViewDataSource {
                 }
             }
             
-            
-          //  cell.HeroeImage?.kf.setImage(with: imageUrl)
             cell.backgroundName.image = UIImage(named: "forNames")
             
             return cell
-    }
+        }
     }
 }
 
@@ -135,7 +135,7 @@ extension HomeViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        NetWorking.shared.getHeroe(id: model.results![indexPath.row].id!) { heroe in
+        network.getHeroe(id: model.results![indexPath.row].id!) { heroe in
             let heroeDetailed = self.model.results![indexPath.row]
             let heroDetail = DetailViewController(model: heroeDetailed)
             
