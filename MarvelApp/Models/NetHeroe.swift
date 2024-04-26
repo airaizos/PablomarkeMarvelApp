@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ResponseHeroe: Decodable {
+struct ResponseHeroe: Codable {
     
     let code:Int
     let data: HData
@@ -21,7 +21,7 @@ struct ResponseHeroe: Decodable {
     }
 }
 
-struct HData: Decodable {
+struct HData: Codable {
     let total: Int
     let count: Int
     let results: [HeroeData]?
@@ -34,7 +34,7 @@ struct HData: Decodable {
     }
 }
 
-struct HeroeData: Decodable {
+struct HeroeData: Codable {
     
     let id: Int?
     let name: String?
@@ -58,7 +58,7 @@ struct HeroeData: Decodable {
     }
 }
 
-struct Thumbnail: Decodable {
+struct Thumbnail: Codable {
     let path: String
     let extension2: String
     
@@ -74,7 +74,7 @@ struct Thumbnail: Decodable {
     }
 }
 
-struct Comics: Decodable {
+struct Comics: Codable {
     let available: Int
     let collectionURI: String
     let items: [ApiItems]
@@ -89,7 +89,7 @@ struct Comics: Decodable {
     }
 }
 
-struct Series: Decodable {
+struct Series: Codable {
     let available: Int
     let collectionURI: String
     let items: [ApiItems]
@@ -105,7 +105,7 @@ struct Series: Decodable {
     }
 }
 
-struct Stories: Decodable {
+struct Stories: Codable {
     let available: Int
     let collectionURI: String
     let items: [ApiItems]
@@ -119,7 +119,7 @@ struct Stories: Decodable {
     }
 }
 
-struct Events: Decodable {
+struct Events: Codable {
     let available: Int
     let collectionURI: String
     let items: [ApiItems]
@@ -133,7 +133,7 @@ struct Events: Decodable {
     }
 }
 
-struct ApiItems: Decodable {
+struct ApiItems: Codable {
     let resourceURI: String
     let name: String
     

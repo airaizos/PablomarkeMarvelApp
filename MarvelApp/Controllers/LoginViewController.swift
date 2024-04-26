@@ -32,7 +32,7 @@ final class LoginViewController: UIViewController {
     
     //Button Action
     @IBAction func enterAction(_ sender: Any) {
-        NetWorking.shared.getAllheroes(success: { allHeroes in
+        NetWorking.shared.getAllHeroes(success: { allHeroes in
             let home = HomeViewController(allHeroes)
             self.navigationController?.pushViewController(home,
                                                           animated: true)
