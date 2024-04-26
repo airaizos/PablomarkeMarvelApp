@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeroeCell: UITableViewCell {
+final class HeroeCell: UITableViewCell {
 
     @IBOutlet weak var heroeName: UILabel!
     @IBOutlet weak var heroeImage: UIImageView!

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeroesCollectionViewCell: UICollectionViewCell {
+final class HeroesCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var HeroeName: UILabel!
     @IBOutlet weak var backgroundName: UIImageView!

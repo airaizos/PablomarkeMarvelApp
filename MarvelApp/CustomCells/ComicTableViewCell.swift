@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ComicTableViewCell: UITableViewCell {
+final class ComicTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backImage: UIImageView!
     @IBOutlet weak var comicLabel: UILabel!

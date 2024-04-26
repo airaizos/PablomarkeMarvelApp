@@ -10,7 +10,7 @@ import Foundation
 struct ResponseHeroe: Decodable {
     
     let code:Int
-    let data: Data
+    let data: HData
     let status: String
     
     enum CodingKeys: String,
@@ -21,7 +21,7 @@ struct ResponseHeroe: Decodable {
     }
 }
 
-struct Data: Decodable {
+struct HData: Decodable {
     let total: Int
     let count: Int
     let results: [HeroeData]?

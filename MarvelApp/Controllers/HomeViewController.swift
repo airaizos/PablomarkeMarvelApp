@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 
     @IBOutlet weak var heroesCollection: UICollectionView!
     @IBOutlet weak var favouriteCollection: UICollectionView!
@@ -22,9 +22,9 @@ class HomeViewController: UIViewController {
     
     
     //MARK: Model
-    var model: Data
+    var model: HData
     
-    init(_ model: Data){
+    init(_ model: HData){
         self.model = model
         super.init(nibName: nil,
                    bundle: nil)

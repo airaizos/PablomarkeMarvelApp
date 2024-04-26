@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCollectionCell: UICollectionViewCell {
+final class CustomCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var favLabel: UILabel!
     @IBOutlet weak var favImage: UIImageView!

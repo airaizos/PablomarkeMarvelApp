@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     // Outlets
     @IBOutlet weak var loginImage: UIImageView!

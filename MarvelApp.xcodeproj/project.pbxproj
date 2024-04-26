@@ -25,7 +25,6 @@
 		39A2B8CB2A6E904C00CA446A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8C92A6E904C00CA446A /* DetailViewController.xib */; };
 		39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A2B8D02A6EC81200CA446A /* HeroeCell.swift */; };
 		39A2B8D32A6EC81200CA446A /* HeroeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39A2B8D12A6EC81200CA446A /* HeroeCell.xib */; };
-		39B7C5282A7BFCA200A170A2 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B7C5272A7BFCA200A170A2 /* ApiKey.swift */; };
 		39D05D432A725DA700468A9E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D05D422A725DA700468A9E /* Networking.swift */; };
 		39D05D462A72620F00468A9E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 39D05D452A72620F00468A9E /* Alamofire */; };
 		39D05D482A726A3700468A9E /* NetHeroe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D05D472A726A3700468A9E /* NetHeroe.swift */; };
@@ -38,6 +37,7 @@
 		39F03C942A6D8C8B00B9DD2F /* MarvelAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F03C932A6D8C8B00B9DD2F /* MarvelAppUITestsLaunchTests.swift */; };
 		39F03CA22A6D8D2700B9DD2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F03CA02A6D8D2700B9DD2F /* LoginViewController.swift */; };
 		39F03CA32A6D8D2700B9DD2F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F03CA12A6D8D2700B9DD2F /* LoginViewController.xib */; };
+		3A9FE7C12BDADC2700B21092 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FE7C02BDADC2700B21092 /* Key.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +75,6 @@
 		39A2B8C92A6E904C00CA446A /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		39A2B8D02A6EC81200CA446A /* HeroeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeCell.swift; sourceTree = "<group>"; };
 		39A2B8D12A6EC81200CA446A /* HeroeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroeCell.xib; sourceTree = "<group>"; };
-		39B7C5272A7BFCA200A170A2 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		39D05D422A725DA700468A9E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		39D05D472A726A3700468A9E /* NetHeroe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetHeroe.swift; sourceTree = "<group>"; };
 		39F03C6D2A6D8C8900B9DD2F /* MarvelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +90,7 @@
 		39F03C932A6D8C8B00B9DD2F /* MarvelAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		39F03CA02A6D8D2700B9DD2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39F03CA12A6D8D2700B9DD2F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		3A9FE7C02BDADC2700B21092 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +181,7 @@
 		39F03C642A6D8C8900B9DD2F = {
 			isa = PBXGroup;
 			children = (
+				3A9FE7C02BDADC2700B21092 /* Key.swift */,
 				39F03C6F2A6D8C8900B9DD2F /* MarvelApp */,
 				39F03C862A6D8C8B00B9DD2F /* MarvelAppTests */,
 				39F03C902A6D8C8B00B9DD2F /* MarvelAppUITests */,
@@ -209,7 +210,6 @@
 				39F03C792A6D8C8B00B9DD2F /* Assets.xcassets */,
 				39F03C702A6D8C8900B9DD2F /* AppDelegate.swift */,
 				39F03C7E2A6D8C8B00B9DD2F /* Info.plist */,
-				39B7C5272A7BFCA200A170A2 /* ApiKey.swift */,
 			);
 			path = MarvelApp;
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					39F03C6C2A6D8C8900B9DD2F = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -382,7 +382,6 @@
 				396EF5962A77B08800128ED5 /* DataDecoder.swift in Sources */,
 				39732AF12A78FAC900F4E500 /* HeroesCollectionViewCell.swift in Sources */,
 				39D05D482A726A3700468A9E /* NetHeroe.swift in Sources */,
-				39B7C5282A7BFCA200A170A2 /* ApiKey.swift in Sources */,
 				39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */,
 				397D917C2A7A56FD00DD0683 /* ComicTableViewCell.swift in Sources */,
 				39982A372A710AEC00B4056F /* Heroe.swift in Sources */,
@@ -390,6 +389,7 @@
 				399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */,
 				3979080D2A7D1787006B3E04 /* FavouriteCell.swift in Sources */,
 				39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */,
+				3A9FE7C12BDADC2700B21092 /* Key.swift in Sources */,
 				39982A392A710C4F00B4056F /* HeroesList.swift in Sources */,
 				39A2B8C12A6E5F3F00CA446A /* HomeViewController.swift in Sources */,
 				39A2B8CA2A6E904C00CA446A /* DetailViewController.swift in Sources */,
@@ -452,6 +452,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -484,6 +485,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -512,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -544,6 +547,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -569,6 +573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6SPUJN2479;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarvelApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -596,6 +601,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6SPUJN2479;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MarvelApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
