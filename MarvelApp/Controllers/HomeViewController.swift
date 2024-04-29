@@ -22,10 +22,12 @@ final class HomeViewController: UIViewController {
     
     //MARK: Model
     var model: HData
+    var modelLogic: ModelLogic
     let network: NetWorking
     
-    init(_ model: HData, network: NetWorking = .shared){
+    init(_ model: HData, modelLogic: ModelLogic = .shared, network: NetWorking = .shared){
         self.model = model
+        self.modelLogic = modelLogic
         self.network = network
         super.init(nibName: nil,
                    bundle: nil)
@@ -37,7 +39,7 @@ final class HomeViewController: UIViewController {
     
     //Modelos de prueba sin api
     let heroes = allHeroes2
-    let favouriteHeroes = favHeroes
+   // let favouriteHeroes = favHeroes
     let appearance = UINavigationBarAppearance()
     
     // MARK: ViewDidLoad
@@ -71,7 +73,7 @@ final class HomeViewController: UIViewController {
         
         // Collection favourites
         
-        if favouriteHeroes.isEmpty {
+        if modelLogic.favourites.isEmpty {
             favouriteCollection.isHidden = true
             topConstraint.constant = 24
             
@@ -84,6 +86,35 @@ final class HomeViewController: UIViewController {
         favouriteCollection.backgroundColor = UIColor.clear
         favouriteCollection.backgroundView = UIView.init(frame: CGRect.zero)
         
+        //Añadir a favoritos
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+              heroesCollection.addGestureRecognizer(longPressGesture)
+        
+        NotificationCenter.default.addObserver(forName: .favourites, object: nil, queue: .main) { [weak self] _ in
+            self?.favouriteCollection.reloadData()
+            
+            if self?.modelLogic.favourites.count ?? 0 >= 1 {
+                self?.favouriteCollection.isHidden = false
+                self?.topConstraint.constant = 177
+            }
+        }
+    }
+    
+    func toggleFavorite() {
+        
+    }
+    
+    @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer) {
+            if gestureRecognizer.state == .began {
+                let point = gestureRecognizer.location(in: heroesCollection)
+                if let indexPath = heroesCollection.indexPathForItem(at: point) {
+                    let selectedItem = model.results![indexPath.item]
+                    modelLogic.addFavourite(selectedItem)
+                }
+            }
+        }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name:.favourites, object: nil)
     }
 }
 
@@ -91,7 +122,7 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         if collectionView == favouriteCollection {
-            return favouriteHeroes.count
+            return modelLogic.favourites.count
         } else {
             return model.count
         }
@@ -103,8 +134,20 @@ extension HomeViewController: UICollectionViewDataSource {
         if collectionView == favouriteCollection {
             let favCell = favouriteCollection.dequeueReusableCell(withReuseIdentifier: "cellFav",
                                                                   for: indexPath) as! FavouriteCell
-            favCell.favImage.image = favouriteHeroes[indexPath.row].image
-            favCell.favName.text = favouriteHeroes[indexPath.row].name
+            let imageUrl = URL(string:modelLogic.favourites[indexPath.row].thumbnail.ThumbnailComplete())
+            
+            network.requestImage(url: imageUrl) { image in
+                DispatchQueue.main.async {
+                    favCell.favImage.image  = image
+                }
+            } failure: { error in
+                RunLoop.main.perform {
+                    favCell.favImage.image = UIImage(named: "Logo")
+                }
+            }
+            
+            
+            favCell.favName.text = modelLogic.favourites[indexPath.row].name
             
             return favCell
         } else {
@@ -129,22 +172,41 @@ extension HomeViewController: UICollectionViewDataSource {
             return cell
         }
     }
+  
 }
 
 extension HomeViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
         
-        network.getHeroe(id: model.results![indexPath.row].id!) { heroe in
-            let heroeDetailed = self.model.results![indexPath.row]
-            let heroDetail = DetailViewController(model: heroeDetailed)
+        if collectionView == favouriteCollection {
+          //ir a detalle
+            let hero = modelLogic.favourites[indexPath.row]
+            let detail = DetailViewController(model: hero)
+            self.navigationController?.pushViewController(detail, animated: true)
             
-            self.navigationController?.pushViewController(heroDetail,
-                                                          animated: true)
-            
-        } failure: { error in
-            print("error")
+        } else {
+            network.getHeroe(id: model.results![indexPath.row].id!) { _ in
+                let heroeDetailed = self.model.results![indexPath.row]
+                let heroDetail = DetailViewController(model: heroeDetailed)
+                
+                self.navigationController?.pushViewController(heroDetail,
+                                                              animated: true)
+                
+            } failure: { error in
+                print("error")
+            }
         }
     }
+   
+    
+//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//            let currentOffset = scrollView.contentOffset.y
+//            let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+//            
+//            if maximumOffset - currentOffset <= 50 {
+//                    self.fetchMovies()
+//            }
+//        }
 }
 

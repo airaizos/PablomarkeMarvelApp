@@ -58,8 +58,11 @@ final class DetailViewController: UIViewController {
         } else {
             heroDescription.text = model.description
         }
+        applyImage()
+    }
+    
+    func applyImage() {
         let imageUrl = URL(string: model.thumbnail.ThumbnailComplete())
-        
         network.requestImage(url: imageUrl) { image in
             DispatchQueue.main.async {
                 self.heroImage.image = image

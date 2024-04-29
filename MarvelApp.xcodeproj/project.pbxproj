@@ -36,6 +36,9 @@
 		39F03CA22A6D8D2700B9DD2F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F03CA02A6D8D2700B9DD2F /* LoginViewController.swift */; };
 		39F03CA32A6D8D2700B9DD2F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F03CA12A6D8D2700B9DD2F /* LoginViewController.xib */; };
 		3A2E7E232BDBB97800FFF546 /* Interface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E7E222BDBB97800FFF546 /* Interface.swift */; };
+		3A2E7E252BDBE29B00FFF546 /* ModelLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E7E242BDBE29B00FFF546 /* ModelLogic.swift */; };
+		3A2E7E292BDBFFF400FFF546 /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2E7E282BDBFFF400FFF546 /* NotificationCenter.swift */; };
+		3A407E752BDFDEDE00134038 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A407E742BDFDEDE00134038 /* Persistence.swift */; };
 		3A9FE7C12BDADC2700B21092 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FE7C02BDADC2700B21092 /* Key.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		39F03CA02A6D8D2700B9DD2F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39F03CA12A6D8D2700B9DD2F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		3A2E7E222BDBB97800FFF546 /* Interface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interface.swift; sourceTree = "<group>"; };
+		3A2E7E242BDBE29B00FFF546 /* ModelLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLogic.swift; sourceTree = "<group>"; };
+		3A2E7E282BDBFFF400FFF546 /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		3A407E742BDFDEDE00134038 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3A9FE7C02BDADC2700B21092 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +159,7 @@
 				39F03CA02A6D8D2700B9DD2F /* LoginViewController.swift */,
 				39A2B8BF2A6E5F3F00CA446A /* HomeViewController.swift */,
 				39A2B8C82A6E904C00CA446A /* DetailViewController.swift */,
+				3A2E7E242BDBE29B00FFF546 /* ModelLogic.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 				39D05D422A725DA700468A9E /* Networking.swift */,
 				396EF5952A77B08800128ED5 /* DataDecoder.swift */,
 				3A2E7E222BDBB97800FFF546 /* Interface.swift */,
+				3A407E742BDFDEDE00134038 /* Persistence.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 		39F03C6F2A6D8C8900B9DD2F /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				3A2E7E262BDBFFDC00FFF546 /* Utils */,
 				396EF5902A779D0500128ED5 /* CustomCells */,
 				396EF5932A779D4900128ED5 /* Networking */,
 				396EF5942A779D5800128ED5 /* Models */,
@@ -228,6 +237,22 @@
 				39F03C932A6D8C8B00B9DD2F /* MarvelAppUITestsLaunchTests.swift */,
 			);
 			path = MarvelAppUITests;
+			sourceTree = "<group>";
+		};
+		3A2E7E262BDBFFDC00FFF546 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E7E272BDBFFE800FFF546 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3A2E7E272BDBFFE800FFF546 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A2E7E282BDBFFF400FFF546 /* NotificationCenter.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,8 +405,11 @@
 				39F03C712A6D8C8900B9DD2F /* AppDelegate.swift in Sources */,
 				397D917C2A7A56FD00DD0683 /* ComicTableViewCell.swift in Sources */,
 				39982A372A710AEC00B4056F /* Heroe.swift in Sources */,
+				3A2E7E292BDBFFF400FFF546 /* NotificationCenter.swift in Sources */,
+				3A407E752BDFDEDE00134038 /* Persistence.swift in Sources */,
 				39D05D432A725DA700468A9E /* Networking.swift in Sources */,
 				399662162A70156C00348332 /* CustomCollectionCell.swift in Sources */,
+				3A2E7E252BDBE29B00FFF546 /* ModelLogic.swift in Sources */,
 				3979080D2A7D1787006B3E04 /* FavouriteCell.swift in Sources */,
 				39A2B8D22A6EC81200CA446A /* HeroeCell.swift in Sources */,
 				3A2E7E232BDBB97800FFF546 /* Interface.swift in Sources */,

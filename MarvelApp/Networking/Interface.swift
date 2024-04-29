@@ -40,4 +40,6 @@ extension URL {
     static func marvelCharacter(id: Int) -> URL {
         baseURL.appending(path: "characters/\(id)").appending(queryItems: URLQueryItem.marvelKey)
     }
+    
+    static let favouritesPath = URL.documentsDirectory.appending(path: "favoritesId.json")
 }

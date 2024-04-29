@@ -12,7 +12,9 @@ final class NetWorking {
     }
     
     func getAllHeroes(success: @escaping (_ allHeroes: HData) -> (), failure: @escaping(_ error: NetworkError?) -> () ) {
-        requestCodable(url: .marvelCharacters, type: ResponseHeroe.self) { json in
+        let offset = Int.random(in: 0..<1565)
+        
+        requestCodable(url: .marvelCharacters(offset: offset), type: ResponseHeroe.self) { json in
             RunLoop.main.perform {
                 success(json.data)
             }

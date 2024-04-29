@@ -15,9 +15,11 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var enterButton: UIButton!
     
     let network: NetWorking
+    let persistence: Persistence
     
-    init(network: NetWorking = .shared) {
+    init(network: NetWorking = .shared, persistence: Persistence = .shared) {
         self.network = network
+        self.persistence = persistence
         super.init(nibName: nil,
                    bundle: nil)
     }
