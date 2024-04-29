@@ -31,7 +31,7 @@ final class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     // Buttons and Images
+        // Buttons and Images
         
         logoImage.image = UIImage(named: "Logo")
         logoImage.contentMode = .scaleAspectFit
@@ -46,12 +46,7 @@ final class LoginViewController: UIViewController {
     
     //Button Action
     @IBAction func enterAction(_ sender: Any) {
-        network.getAllHeroes(success: { allHeroes in
-            let home = HomeViewController(allHeroes)
-            self.navigationController?.pushViewController(home,
-                                                          animated: true)
-        }, failure: { error in
-            print("Error")
-        })
+        let home = HomeViewController()
+        self.navigationController?.pushViewController(home,animated: true)
     }
 }

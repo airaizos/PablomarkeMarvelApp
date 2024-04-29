@@ -10,5 +10,5 @@ import Foundation
 
 extension Notification.Name {
     static let favourites = Notification.Name("FAVOURITES")
-    
+    static let heroes = Notification.Name("HEROES")
 }

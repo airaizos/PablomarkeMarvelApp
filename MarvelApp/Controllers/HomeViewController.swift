@@ -21,12 +21,10 @@ final class HomeViewController: UIViewController {
     
     
     //MARK: Model
-    var model: HData
     var modelLogic: ModelLogic
     let network: NetWorking
     
-    init(_ model: HData, modelLogic: ModelLogic = .shared, network: NetWorking = .shared){
-        self.model = model
+    init(modelLogic: ModelLogic = .shared, network: NetWorking = .shared){
         self.modelLogic = modelLogic
         self.network = network
         super.init(nibName: nil,
@@ -93,10 +91,14 @@ final class HomeViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: .favourites, object: nil, queue: .main) { [weak self] _ in
             self?.favouriteCollection.reloadData()
             
-            if self?.modelLogic.favourites.count ?? 0 >= 1 {
+            if self?.modelLogic.favouritesCount ?? 0 >= 1 {
                 self?.favouriteCollection.isHidden = false
                 self?.topConstraint.constant = 177
             }
+        }
+        
+        NotificationCenter.default.addObserver(forName: .heroes, object: nil, queue: .main) { [weak self] _ in
+            self?.heroesCollection.reloadData()
         }
     }
     
@@ -108,13 +110,14 @@ final class HomeViewController: UIViewController {
             if gestureRecognizer.state == .began {
                 let point = gestureRecognizer.location(in: heroesCollection)
                 if let indexPath = heroesCollection.indexPathForItem(at: point) {
-                    let selectedItem = model.results![indexPath.item]
+                    let selectedItem = modelLogic.heroes[indexPath.item]
                     modelLogic.addFavourite(selectedItem)
                 }
             }
         }
     deinit {
         NotificationCenter.default.removeObserver(self, name:.favourites, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .heroes, object: nil)
     }
 }
 
@@ -124,7 +127,7 @@ extension HomeViewController: UICollectionViewDataSource {
         if collectionView == favouriteCollection {
             return modelLogic.favourites.count
         } else {
-            return model.count
+            return modelLogic.heroesCount
         }
     }
     
@@ -154,8 +157,8 @@ extension HomeViewController: UICollectionViewDataSource {
             let cell = heroesCollection.dequeueReusableCell(withReuseIdentifier: "HeroesCC",
                                                             for: indexPath) as! HeroesCollectionViewCell
             
-            cell.HeroeName.text = model.results![indexPath.row].name
-            let imageUrl = URL(string: model.results![indexPath.row].thumbnail.ThumbnailComplete())
+            cell.HeroeName.text = modelLogic.heroes[indexPath.row].name
+            let imageUrl = URL(string: modelLogic.heroes[indexPath.row].thumbnail.ThumbnailComplete())
             
             network.requestImage(url: imageUrl) { image in
                 DispatchQueue.main.async {
@@ -186,8 +189,8 @@ extension HomeViewController: UICollectionViewDelegate{
             self.navigationController?.pushViewController(detail, animated: true)
             
         } else {
-            network.getHeroe(id: model.results![indexPath.row].id!) { _ in
-                let heroeDetailed = self.model.results![indexPath.row]
+            network.getHeroe(id: modelLogic.heroes[indexPath.row].id!) { _ in
+                let heroeDetailed = self.modelLogic.heroes[indexPath.row]
                 let heroDetail = DetailViewController(model: heroeDetailed)
                 
                 self.navigationController?.pushViewController(heroDetail,
@@ -198,15 +201,14 @@ extension HomeViewController: UICollectionViewDelegate{
             }
         }
     }
-   
-    
-//    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//            let currentOffset = scrollView.contentOffset.y
-//            let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
-//            
-//            if maximumOffset - currentOffset <= 50 {
-//                    self.fetchMovies()
-//            }
-//        }
+       
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+            let currentOffset = scrollView.contentOffset.y
+            let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+            
+            if maximumOffset - currentOffset <= 50 {
+                self.modelLogic.fetchHeroes()
+            }
+        }
 }
 
